@@ -1,10 +1,12 @@
 FROM node:17-alpine
 
 WORKDIR /app
-# COPY ./<src> . (if without WORKDIR & Isn't consider package.json)
-COPY . . 
+
+COPY package.json .
 
 RUN npm install
+
+COPY . . 
 
 EXPOSE 4000
 

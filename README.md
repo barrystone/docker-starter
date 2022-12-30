@@ -4,6 +4,10 @@ Learning docker step by step.
 
 ## Docker Comand line (use frequently, Personal notes)
 
+- Build images (with **Dockerfile**)
+
+        docker build -t <Image-name> <relative path on dockerfile>
+
 - Lists all of images
 
          docker images
