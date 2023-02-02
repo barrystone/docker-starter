@@ -72,7 +72,7 @@ Learning docker step by step.
 
         docker system prune -a
 
-- ==docker-compose== with **docker-compose.yaml** file to run (instead of absolute path volume cmd in terminal )
+- docker-compose with **docker-compose.yaml** file to run (instead of absolute path volume cmd in terminal )
 
   - Run & Create the container
 
@@ -83,4 +83,5 @@ Learning docker step by step.
         docker-compose down
 
   - Stop & Delete the container & images('--rmi all') & volumes(-v)
+
         docker-compose down --rmi all -v
