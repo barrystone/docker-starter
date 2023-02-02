@@ -14,7 +14,7 @@ Learning docker step by step.
         docker build -t myapp:v1 ./api
         // Example with nodemon (no volume, after close terminal then delete the container only)
         docker run --name app0_nodemon -p 4000:4000 --rm myapp:nodemon
-        // Example with nodemon & volume (except node_modules/, all in the volume on detected)
+        // Example with nodemon & volume (Avoid 'node_modules/' get delected to affect running, specified vlolume 'api:/app'. ':' mean wht folder on the container we kind of want to map)
         docker run --name app0_nodemon -p 4000:4000 --rm  -v /Users/<username>/Documents/projects/docker-starter/api:/app -v /Users/<username>/Documents/projects/docker-starter/api/node_modules myapp:nodemon
 
 - Lists all of images
@@ -71,3 +71,16 @@ Learning docker step by step.
 - Delete all of images, container, volumes (Clean all, but if container in use and the image of the container can't delete)
 
         docker system prune -a
+
+- ==docker-compose== with **docker-compose.yaml** file to run (instead of absolute path volume cmd in terminal )
+
+  - Run & Create the container
+
+        docker-compose up
+
+  - Stop & Delete the container
+
+        docker-compose down
+
+  - Stop & Delete the container & images('--rmi all') & volumes(-v)
+        docker-compose down --rmi all -v
