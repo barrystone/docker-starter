@@ -12,6 +12,10 @@ Learning docker step by step.
         docker build -t myImage ./api
         // Example with tag version
         docker build -t myapp:v1 ./api
+        // Example with nodemon (no volume, after close terminal then delete the container only)
+        docker run --name app0_nodemon -p 4000:4000 --rm myapp:nodemon
+        // Example with nodemon & volume (except node_modules/, all in the volume on detected)
+        docker run --name app0_nodemon -p 4000:4000 --rm  -v /Users/<username>/Documents/projects/docker-starter/api:/app -v /Users/<username>/Documents/projects/docker-starter/api/node_modules myapp:nodemon
 
 - Lists all of images
 
